@@ -1,0 +1,55 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  background-color: white;
+  position: sticky;
+  top: 0;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.top-left,
+.top-right {
+  flex: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.top-center {
+  flex: 6;
+}
+
+.top-img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+}
+
+.top-icon {
+  font-size: 20px;
+  margin-right: 10px;
+  color: 444;
+  cursor: pointer;
+}
+
+.top-list {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+}
+
+.top-list-item {
+  margin-right: 20px;
+  font-size: 18px;
+  font-weight: 300;
+  cursor: pointer;
+}
+
+.top-search-icon {
+  margin-left: 15px;
+  font-size: 18px;
+  color: #666;
+  cursor: pointer;
+}
