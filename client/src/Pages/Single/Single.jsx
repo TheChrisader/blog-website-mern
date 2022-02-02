@@ -1,13 +1,13 @@
 import React from "react";
-import Post from "../../components/Post/Post";
 import Sidebar from "../../components/Sidebar/Sidebar";
+import SinglePost from "../../components/SinglePost/SinglePost";
 
 import "./Single.css";
 
 const Single = () => {
   return (
-    <div>
-      {/* <Post /> */}
+    <div className="single">
+      <SinglePost />
       <Sidebar />
     </div>
   );
