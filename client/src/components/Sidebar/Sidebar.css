@@ -2,11 +2,14 @@
   flex: 3;
   margin: 20px;
   padding-bottom: 30px;
-  background-color: #fdfbfb;
+  background-color: #fcfaf9;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: sticky;
+  top: 60px;
+  height: 100%;
 }
 
 .sidebar-item {
