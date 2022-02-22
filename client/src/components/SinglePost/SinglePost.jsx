@@ -14,7 +14,7 @@ const SinglePost = () => {
           Lorem ipsum dolor
           <div className="single-post-edit">
             <i className="single-post-icon fa-solid fa-user-pen"></i>
-            <i class="single-post-icon fa-solid fa-trash-can"></i>
+            <i className="single-post-icon fa-solid fa-trash-can"></i>
           </div>
         </h1>
         <div className="single-post-info">
