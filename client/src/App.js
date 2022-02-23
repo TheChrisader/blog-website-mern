@@ -1,3 +1,5 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 import Navbar from "./components/Navbar/Navbar";
 import Create from "./Pages/Create/Create";
 import Home from "./Pages/Home/Home";
@@ -10,12 +12,16 @@ function App() {
   return (
     <div>
       <Navbar />
-      {/* <Home /> */}
-      {/* <Single /> */}
-      {/* <Create /> */}
-      {/* <Settings /> */}
-      {/* <Login /> */}
-      <Register />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="single" element={<Single />} />
+          <Route path="create" element={<Create />} />
+          {/* <Settings /> */}
+          {/* <Login /> */}
+          {/* <Register /> */}
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
