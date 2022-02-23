@@ -43,7 +43,7 @@
 .top-list-item {
   margin-right: 20px;
   font-size: 18px;
-  font-weight: 300;
+  font-weight: 400;
   cursor: pointer;
 }
 
@@ -52,4 +52,8 @@
   font-size: 18px;
   color: #666;
   cursor: pointer;
+}
+
+.link {
+  text-decoration: none;
 }
