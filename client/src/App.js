@@ -15,11 +15,12 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="single" element={<Single />} />
-          <Route path="create" element={<Create />} />
-          {/* <Settings /> */}
-          {/* <Login /> */}
-          {/* <Register /> */}
+          <Route path="/posts" element={<Home />} />
+          <Route path="/post/:id" element={<Single />} />
+          <Route path="/write" element={<Create />} />
+          <Route path="/settings" element={<Settings />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
         </Routes>
       </BrowserRouter>
     </div>
