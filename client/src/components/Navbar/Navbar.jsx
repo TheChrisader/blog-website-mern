@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./Navbar.css";
 
 const Navbar = () => {
-  const user = false;
+  const user = true;
   return (
     <div className="navbar">
       <div className="top-left">
@@ -34,7 +34,7 @@ const Navbar = () => {
               WRITE
             </Link>
           </li>
-          <li className="top-list-item">LOGOUT</li>
+          {user && <li className="top-list-item">LOGOUT</li>}
         </ul>
       </div>
       <div className="top-right">
@@ -50,12 +50,12 @@ const Navbar = () => {
           <ul className="top-list">
             <li className="top-list-item">
               <Link className="link" to="/login">
-                Login
+                LOGIN
               </Link>
             </li>
             <li className="top-list-item">
               <Link className="link" to="/register">
-                Register
+                REGISTER
               </Link>
             </li>
           </ul>
