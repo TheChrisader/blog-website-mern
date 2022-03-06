@@ -6,11 +6,10 @@ const router = express.Router();
 
 // Register Route
 router.post("/register", async (req, res) => {
-  const existingUser = await User.findOne({ username: req.body.username });
-  if (existingUser) {
-    res.status(400).json("User already exists");
-  }
   try {
+    const existingUser = await User.findOne({ username: req.body.username });
+    if (existingUser) return res.status(400).json("User already exists");
+
     const salt = await bcrypt.genSalt(10);
     const hashedPass = await bcrypt.hash(req.body.password, salt);
     const newUser = new User({
@@ -29,13 +28,15 @@ router.post("/register", async (req, res) => {
 router.post("/login", async (req, res) => {
   try {
     const user = await User.findOne({ username: req.body.username });
-    !user && res.status(400).json("Wrong credentials");
+    if (!user) return res.status(400).json("Wrong credentials");
 
-    const validate = await bcrypt.compare(req.body.password, user.password);
-    !validate && res.status(400).json("Wrong password");
+    const validatedPassword = await bcrypt.compare(
+      req.body.password,
+      user.password
+    );
+    if (!validatedPassword) return res.status(400).json("Wrong password");
 
     const { password, ...others } = user._doc;
-
     res.status(200).json(others);
   } catch (err) {
     res.status(500).json(err.message);
