@@ -3,6 +3,7 @@ const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 
 const authRoute = require("./routes/Auth");
+const userRoute = require("./routes/Users");
 
 const app = express();
 dotenv.config();
@@ -23,6 +24,7 @@ app.get("/", (req, res) => {
 app.use(express.json());
 
 app.use("/api/auth", authRoute);
+app.use("/api/users", userRoute);
 
 app.listen(process.env.PORT || 8000, () => {
   console.log(`Connected to server`);
