@@ -2,6 +2,11 @@ const express = require("express");
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 
+const authRoute = require("./routes/Auth");
+const userRoute = require("./routes/Users");
+const postRoute = require("./routes/Posts");
+const categoryRoute = require("./routes/Categories");
+
 const app = express();
 dotenv.config();
 
@@ -17,6 +22,13 @@ mongoose
 app.get("/", (req, res) => {
   res.send("Hello World");
 });
+
+app.use(express.json());
+
+app.use("/api/auth", authRoute);
+app.use("/api/users", userRoute);
+app.use("/api/posts", postRoute);
+app.use("/api/categories", categoryRoute);
 
 app.listen(process.env.PORT || 8000, () => {
   console.log(`Connected to server`);
