@@ -9,6 +9,7 @@ import Settings from "./Pages/Settings/Settings";
 import Single from "./Pages/Single/Single";
 
 function App() {
+  const currentUser = false;
   return (
     <BrowserRouter>
       <Navbar />
@@ -16,10 +17,16 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/posts" element={<Home />} />
         <Route path="/post/:id" element={<Single />} />
-        <Route path="/write" element={<Create />} />
-        <Route path="/settings" element={<Settings />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
+        <Route path="/write" element={currentUser ? <Create /> : <Login />} />
+        <Route
+          path="/settings"
+          element={currentUser ? <Settings /> : <Login />}
+        />
+        <Route path="/login" element={currentUser ? <Home /> : <Login />} />
+        <Route
+          path="/register"
+          element={currentUser ? <Home /> : <Register />}
+        />
         <Route
           path="*"
           element={
