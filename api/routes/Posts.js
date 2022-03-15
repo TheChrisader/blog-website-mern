@@ -28,7 +28,7 @@ router.post("/", async (req, res) => {
 
 // Update a post
 
-router.put("/", async (req, res) => {
+router.put("/:id", async (req, res) => {
   try {
     const post = await Post.findById(req.params.id);
     if (post.username === req.body.username) {
