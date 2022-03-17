@@ -48,6 +48,10 @@
   text-align: center;
 }
 
+.login-button:disabled {
+  cursor: not-allowed;
+}
+
 .login-register-button {
   margin-top: 5px;
   background-color: teal;

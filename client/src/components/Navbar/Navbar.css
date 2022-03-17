@@ -36,7 +36,7 @@
 
 .top-list {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   list-style: none;
 }
 
