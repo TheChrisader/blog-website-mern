@@ -11,7 +11,6 @@ const Sidebar = () => {
   useEffect(() => {
     const fetchCats = async () => {
       const res = await axios.get(`/categories`);
-      console.log(res);
       setCats(res.data);
     };
     fetchCats();
