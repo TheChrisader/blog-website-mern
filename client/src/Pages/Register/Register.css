@@ -51,7 +51,8 @@
 .register-login-button {
   margin-top: 5px;
   background-color: lightcoral;
-  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
   padding: 10px;
   border: none;
   color: white;

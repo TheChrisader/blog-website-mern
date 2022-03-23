@@ -38,12 +38,12 @@ router.delete("/:id", async (req, res) => {
       await Post.deleteMany({ username: user.username });
       try {
         await User.findByIdAndDelete(req.params.id);
-        res.status(400).json("User deleted...");
+        return res.status(200).json("User deleted...");
       } catch (err) {
-        res.status(500).json(err.message);
+        return res.status(500).json(err.message);
       }
     } catch (err) {
-      res.status(404).json("User does not exist");
+      return res.status(404).json("User does not exist");
     }
   } else {
     return res.status(401).json("You can ony delete your own account");
@@ -53,7 +53,7 @@ router.delete("/:id", async (req, res) => {
 // GET
 router.get("/:id", async (req, res) => {
   try {
-    const user = User.findById(req.params.id);
+    const user = await User.findById(req.params.id);
 
     const { password, ...others } = user._doc;
     return res.status(200).json(others);
